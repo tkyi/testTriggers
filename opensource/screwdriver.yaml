@@ -1,0 +1,16 @@
+jobs:
+  main:
+    requires: [~pr, ~commit, ~sd@113:main]
+    image: node:8
+    steps:
+      - echo: echo hi
+  other:
+    requires: [~pr, ~commit, ~sd@113:promote]
+    image: node:8
+    steps:
+      - echo: echo hi
+  other2:
+    requires: [~pr, ~commit, ~sd@113:test]
+    image: node:8
+    steps:
+      - echo: echo hi
